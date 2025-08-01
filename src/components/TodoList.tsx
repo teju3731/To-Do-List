@@ -30,6 +30,7 @@ export default function TodoList() {
     priorityFilter,
     sortBy,
     sortOrder,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } = useAppSelector((state: any) => state.todos);
 
   const [isFormOpen, setIsFormOpen] = useState(false);
