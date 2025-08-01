@@ -46,7 +46,7 @@ export default function TodoList() {
       return matchesSearch && matchesStatus && matchesPriority;
     })
     .sort((a: Todo, b: Todo) => {
-      let aValue: any, bValue: any;
+      let aValue: string | number, bValue: string | number;
       
       switch (sortBy) {
         case 'dueDate':
@@ -132,13 +132,13 @@ export default function TodoList() {
         searchTerm={searchTerm}
         onSearchChange={(term) => dispatch(setSearchTerm(term))}
         statusFilter={statusFilter}
-        onStatusFilterChange={(status) => dispatch(setStatusFilter(status as any))}
+        onStatusFilterChange={(status) => dispatch(setStatusFilter(status as 'All' | 'Pending' | 'In Progress' | 'Completed'))}
         priorityFilter={priorityFilter}
-        onPriorityFilterChange={(priority) => dispatch(setPriorityFilter(priority as any))}
+        onPriorityFilterChange={(priority) => dispatch(setPriorityFilter(priority as 'All' | 'High' | 'Medium' | 'Low'))}
         sortBy={sortBy}
-        onSortByChange={(sortBy) => dispatch(setSortBy(sortBy as any))}
+        onSortByChange={(sortBy) => dispatch(setSortBy(sortBy as 'dueDate' | 'priority' | 'createdAt'))}
         sortOrder={sortOrder}
-        onSortOrderChange={(order) => dispatch(setSortOrder(order as any))}
+        onSortOrderChange={(order) => dispatch(setSortOrder(order as 'asc' | 'desc'))}
       />
 
       <div className="flex justify-between items-center mb-6">

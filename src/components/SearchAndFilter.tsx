@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, Filter, SortAsc } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 interface SearchAndFilterProps {
   searchTerm: string;
